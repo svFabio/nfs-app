@@ -8,6 +8,11 @@ Sistema Operativo: openSUSE Leap 15.6
 Python: 3.11.x
 PyQt6: 6.6.x
 
+servidor NFS
+```
+sudo zypper install nfs-kernel-server
+```
+
 **Instalar dependencias**
 ```
 sudo zypper install python311-PyQt6
