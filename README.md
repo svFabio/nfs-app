@@ -17,10 +17,14 @@ sudo zypper install nfs-kernel-server
 ```
 sudo zypper install python311-PyQt6
 ```
+Se añaden instrucciones para ejecutar la app con sudo preservando las variables de entorno actuales. Esto es necesario porque:
+
+1. PYTHONPATH: Root necesita saber dónde está el módulo 'nfs_app'.
+2. DISPLAY & XAUTHORITY: Root necesita acceso a la sesión gráfica del usuario para dibujar la ventana.
 
 **Ejecucion**
 ```
-python3.11 -m nfs_app.main
+sudo env PYTHONPATH=$(pwd) DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY python3.11 -m nfs_app.main
 ```
 
 **Estructura del proyecto**
